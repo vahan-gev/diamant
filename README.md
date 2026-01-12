@@ -23,7 +23,7 @@ Inspired by [shadcn/ui](https://ui.shadcn.com) — own your components, customiz
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 Get up and running in seconds with a single command:
 
@@ -33,14 +33,14 @@ npx diamant init
 
 This will automatically:
 
--   🎨 Detect or install Tailwind CSS
--   🎭 Set up theme variables and animations
--   🔧 Create the `cn()` utility function
--   📝 Generate `diamant.json` configuration
+-   Detect or install Tailwind CSS
+-   Set up theme variables and animations
+-   Create the `cn()` utility function
+-   Generate `diamant.json` configuration
 
 ---
 
-## 📦 Adding Components
+## Adding Components
 
 ```bash
 # Add specific components
@@ -55,7 +55,7 @@ npx diamant add
 
 ---
 
-## 🧩 Components
+## Components
 
 A carefully curated collection of **25+ accessible, customizable components**:
 
@@ -90,7 +90,7 @@ A carefully curated collection of **25+ accessible, customizable components**:
 
 <br />
 
-## ⌨️ Commands
+## Commands
 
 | Command                              | Description                          |
 | ------------------------------------ | ------------------------------------ |
@@ -103,7 +103,7 @@ A carefully curated collection of **25+ accessible, customizable components**:
 
 <br />
 
-## ⚙️ Configuration
+## Configuration
 
 After running `init`, a `diamant.json` file is created in your project root:
 
@@ -129,7 +129,7 @@ You can customize:
 
 <br />
 
-## 📋 Requirements
+## Requirements
 
 | Requirement  | Version    |
 | ------------ | ---------- |
@@ -139,7 +139,7 @@ You can customize:
 
 <br />
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Feel free to:
 
@@ -151,7 +151,7 @@ Contributions are welcome! Feel free to:
 
 <br />
 
-## 📄 License
+## License
 
 [MIT](LICENSE) © Vahan Gevorgyan
 
