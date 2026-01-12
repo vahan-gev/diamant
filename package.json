@@ -26,6 +26,14 @@
     ],
     "author": "vahan-gev",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vahan-gev/diamant.git"
+    },
+    "homepage": "https://github.com/vahan-gev/diamant#readme",
+    "bugs": {
+        "url": "https://github.com/vahan-gev/diamant/issues"
+    },
     "dependencies": {
         "chalk": "^5.3.0",
         "commander": "^12.1.0",
