@@ -8,10 +8,12 @@
 [![npm downloads](https://img.shields.io/npm/dm/diamant?style=flat-square&color=blue)](https://www.npmjs.com/package/diamant)
 [![GitHub stars](https://img.shields.io/github/stars/vahan-gev/diamant?style=flat-square&color=gold)](https://github.com/vahan-gev/diamant)
 [![License](https://img.shields.io/npm/l/diamant?style=flat-square&color=green)](LICENSE)
+[![Demo](https://img.shields.io/badge/demo-live-brightgreen?style=flat-square)](https://diamant-demo.vercel.app/)
 
 Add stunning, accessible UI components to your React and Next.js projects.<br/>
 Inspired by [shadcn/ui](https://ui.shadcn.com) — own your components, customize everything.
 
+[Live Demo](https://diamant-demo.vercel.app/) •
 [Getting Started](#-getting-started) •
 [Components](#-components) •
 [Commands](#-commands) •
