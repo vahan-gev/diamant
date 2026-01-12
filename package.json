@@ -1,0 +1,44 @@
+{
+    "name": "diamant",
+    "version": "1.0.0",
+    "description": "Beautiful React UI components, one command away",
+    "type": "module",
+    "main": "dist/index.js",
+    "bin": {
+        "diamant": "./dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc && npm run copy-templates",
+        "copy-templates": "cp -r src/templates dist/",
+        "dev": "tsc --watch",
+        "start": "node dist/index.js"
+    },
+    "keywords": [
+        "ui",
+        "components",
+        "react",
+        "nextjs",
+        "tailwind",
+        "cli"
+    ],
+    "author": "vahan-gev",
+    "license": "MIT",
+    "dependencies": {
+        "chalk": "^5.3.0",
+        "commander": "^12.1.0",
+        "diff": "^7.0.0",
+        "fs-extra": "^11.2.0",
+        "ora": "^8.1.1",
+        "prompts": "^2.4.2"
+    },
+    "devDependencies": {
+        "@types/diff": "^6.0.0",
+        "@types/fs-extra": "^11.0.4",
+        "@types/node": "^22.10.5",
+        "@types/prompts": "^2.4.9",
+        "typescript": "^5.7.3"
+    }
+}

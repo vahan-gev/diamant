@@ -1,0 +1,732 @@
+/*
+ * Diamant Theme Configuration
+ * 
+ * This file defines CSS custom properties (variables) for theming.
+ * Colors are defined in HSL format for easy manipulation.
+ * 
+ * To customize: modify the values in :root (light) or .dark (dark mode)
+ */
+
+:root {
+    /* Background colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    /* Card/Container colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary brand color */
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary color */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Muted/subtle elements */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent color */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Destructive/error states */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Success states */
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 355.7 100% 97.3%;
+
+    /* Warning states */
+    --warning: 45.4 93.4% 47.5%;
+    --warning-foreground: 26 83.3% 14.1%;
+
+    /* Border and input colors */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    /* Ring color (focus states) */
+    --ring: 222.2 84% 4.9%;
+
+    /* Border radius */
+    --radius: 0.5rem;
+}
+
+.dark {
+    /* Background colors */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    /* Card/Container colors */
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 98%;
+
+    /* Popover colors */
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary brand color */
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 9%;
+
+    /* Secondary color */
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted/subtle elements */
+    --muted: 0 0% 9%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Accent color */
+    --accent: 0 0% 9%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive/error states */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Success states */
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 144.9 80.4% 10%;
+
+    /* Warning states */
+    --warning: 48 96.5% 53%;
+    --warning-foreground: 26 83.3% 14.1%;
+
+    /* Border and input colors */
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+
+    /* Ring color (focus states) */
+    --ring: 0 0% 80%;
+}
+
+* {
+    border-color: hsl(var(--border));
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+/* Basic Fade */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Accordion */
+@keyframes accordion-down {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+
+    to {
+        height: var(--accordion-content-height, auto);
+        opacity: 1;
+    }
+}
+
+@keyframes accordion-up {
+    from {
+        height: var(--accordion-content-height, auto);
+        opacity: 1;
+    }
+
+    to {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+/* Modal/Dialog */
+@keyframes modal-overlay-in {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+
+    to {
+        opacity: 1;
+        backdrop-filter: blur(4px);
+    }
+}
+
+@keyframes modal-content-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes modal-content-out {
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+}
+
+/* Slide animations */
+@keyframes slide-in-from-top {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-from-bottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-from-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-from-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-to-top {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-out-to-bottom {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-out-to-left {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-out-to-right {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Scale/Zoom */
+@keyframes zoom-in {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoom-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+/* Bounce */
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pulse */
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Spin */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ping (ripple effect) */
+@keyframes ping {
+    75%,
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Shake */
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-4px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(4px);
+    }
+}
+
+/* Click ripple effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Android-style button ripple */
+@keyframes button-ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* Tooltip */
+@keyframes tooltip-in {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Sheet/Drawer */
+@keyframes sheet-in-right {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes sheet-out-right {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes sheet-in-left {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes sheet-out-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes sheet-in-top {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes sheet-out-top {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes sheet-in-bottom {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes sheet-out-bottom {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+}
+
+/* Skeleton loading */
+@keyframes skeleton-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Switch toggle */
+@keyframes switch-on {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(calc(100% + 2px)) scale(1.1);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes switch-off {
+    0% {
+        transform: translateX(100%);
+    }
+
+    50% {
+        transform: translateX(-2px) scale(1.1);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   ANIMATION UTILITY CLASSES
+   ======================================== */
+
+.animate-fade-in {
+    animation: fade-in 0.15s ease-out;
+}
+
+.animate-fade-out {
+    animation: fade-out 0.15s ease-out;
+}
+
+.animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+}
+
+.animate-modal-overlay-in {
+    animation: modal-overlay-in 0.2s ease-out forwards;
+}
+
+.animate-modal-content-in {
+    animation: modal-content-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-modal-content-out {
+    animation: modal-content-out 0.15s ease-in forwards;
+}
+
+.animate-zoom-in {
+    animation: zoom-in 0.2s ease-out;
+}
+
+.animate-zoom-out {
+    animation: zoom-out 0.2s ease-in;
+}
+
+.animate-bounce-in {
+    animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+.animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.animate-ripple {
+    animation: ripple 0.6s linear;
+}
+
+.animate-tooltip-in {
+    animation: tooltip-in 0.15s ease-out;
+}
+
+.animate-skeleton {
+    background: linear-gradient(
+        90deg,
+        hsl(var(--muted)) 25%,
+        hsl(var(--muted-foreground) / 0.1) 50%,
+        hsl(var(--muted)) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+/* Sheet animations */
+.animate-sheet-in-right {
+    animation: sheet-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-sheet-out-right {
+    animation: sheet-out-right 0.2s ease-in;
+}
+
+.animate-sheet-in-left {
+    animation: sheet-in-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-sheet-out-left {
+    animation: sheet-out-left 0.2s ease-in;
+}
+
+.animate-sheet-in-top {
+    animation: sheet-in-top 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-sheet-out-top {
+    animation: sheet-out-top 0.2s ease-in;
+}
+
+.animate-sheet-in-bottom {
+    animation: sheet-in-bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-sheet-out-bottom {
+    animation: sheet-out-bottom 0.2s ease-in;
+}
+
+/* Slide animations */
+.animate-slide-in-from-top {
+    animation: slide-in-from-top 0.2s ease-out;
+}
+
+.animate-slide-in-from-bottom {
+    animation: slide-in-from-bottom 0.2s ease-out;
+}
+
+.animate-slide-in-from-left {
+    animation: slide-in-from-left 0.2s ease-out;
+}
+
+.animate-slide-in-from-right {
+    animation: slide-in-from-right 0.2s ease-out;
+}
+
+/* ========================================
+   INTERACTIVE STATES
+   ======================================== */
+
+/* Click effect base styles */
+.click-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.click-effect::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, currentColor 10%, transparent 10.01%);
+    transform: scale(10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+    pointer-events: none;
+}
+
+.click-effect:active::after {
+    transform: scale(0);
+    opacity: 0.1;
+    transition: 0s;
+}
+
+/* Active press state */
+.press-effect {
+    transition: transform 0.1s ease-out;
+}
+
+.press-effect:active {
+    transform: scale(0.97);
+}
+
+/* Glow on hover */
+.glow-effect {
+    transition: box-shadow 0.2s ease-out;
+}
+
+.glow-effect:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+}
